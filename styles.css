@@ -242,6 +242,80 @@ footer a:focus-visible {
   word-break: keep-all;
 }
 
+.profile-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: clamp(3rem, 6vw, 5rem) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+}
+
+.profile-meta li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.35rem 1rem;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 500;
+}
+
+.profile-meta li + li {
+  border-left: 1px solid var(--line);
+}
+
+.profile-meta span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: clamp(3rem, 7vw, 6rem);
+}
+
+.experience-card {
+  min-height: 21rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.23);
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.experience-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.experience-kicker {
+  margin: 0 0 clamp(4rem, 9vw, 7rem);
+  color: var(--accent);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.experience-card h3 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.4rem, 2.7vw, 2.1rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  word-break: keep-all;
+}
+
+.experience-card > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  word-break: keep-all;
+}
+
 .interest-list {
   margin-top: clamp(3rem, 7vw, 6rem);
   border-top: 1px solid var(--line);
@@ -374,6 +448,24 @@ footer p {
 
   .about-grid {
     grid-template-columns: 1fr;
+  }
+
+  .profile-meta,
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-meta li + li {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .experience-card {
+    min-height: auto;
+  }
+
+  .experience-kicker {
+    margin-bottom: 3.5rem;
   }
 
   .interest-card {
